@@ -1,0 +1,17 @@
+<h1>Genres#new</h1>
+
+<%= form_for(@genre) do |f| %>
+
+<p>ジャンル</p>
+<%= f.text_field :name %>
+<p><%= f.submit 'ジャンルを追加する' %></p>
+
+<% end %>
+
+ <% @genres.each do |genre| %>
+    <p>ジャンル名</p>
+    <span><%= genre.name %></span>
+    <%= link_to "編集", edit_genre_path(genre.id) %>
+    <%= link_to "削除", genre_path(genre.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+
+ <% end %>

@@ -1,0 +1,10 @@
+<p>ユーザーの詳細ページ</p>
+
+<p><%= current_user.name %></p>
+<p><%= current_user.profile %></p>
+<p><%= attachment_image_tag current_user, :user_image, :fill, 150, 150, format: 'jpeg' %></p>
+
+<p><%= attachment_image_tag current_user, :user_backimage, :fill, 150, 150, format: 'jpeg' %></p>
+
+<p><%= link_to 'プロフィール編集', edit_user_path %></p>
+<p><%= link_to 'logout', destroy_user_session_path, method: :delete %></p>

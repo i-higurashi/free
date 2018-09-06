@@ -1,0 +1,2 @@
+class Nicetwo < ApplicationRecord
+end
