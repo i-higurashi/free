@@ -1,0 +1,309 @@
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<div class="container">
+
+
+	<div class="col-md-6 baku1">
+	 <div>
+	 	<h4 class="intoro">Free</h4>
+	 	 <div class="intoro_a">
+	 	  <p class="intoro_b">こんにちわ太郎さんと喋る<span class="glyphicon glyphicon-headphones"></span></p>
+	 	  <p class="intoro_b">こんにちわ山田さんと喋る<span class="glyphicon glyphicon-headphones"></span></p>
+	 	  <p class="intoro_b">こんにちわ本田さんと喋る<span class="glyphicon glyphicon-headphones"></span></p>
+	     </div>
+	 </div>
+	</div>
+
+	<div class="col-md-6 baku">
+	      <h4 class="intoro1">思うがままに語り合う。<br>Freeをはじめましょう。</h4>
+	      <div class="intoro1_b">
+	      	<h3>Start</h3>
+            <p class="button50 sign_up_button btn1 outline1 btn-success1">新規登録</p>
+            <p class="button50 sign_in_button btn1 outline1 btn-success1">ログイン</p>
+          </div>
+	</div>
+
+</div>
+
+
+
+<style>
+
+body {
+  /*background-color: red;*/
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 700px;
+}
+
+.baku {
+  background-color: white;
+}
+
+.baku1 {
+  background-color: #2dcdb5
+}
+
+
+.baku, .baku1 {
+  width: 50%;
+  height: 100%;
+}
+
+
+.intoro {
+  color: white;
+  text-align: center;
+  font-size: 70px;
+  padding-top: 120px;
+}
+
+.intoro_a {
+ color: white;
+ text-align: center;
+ font-size: 20px;
+}
+
+.intoro_b {
+ padding-top: 30px;
+ padding-bottom: 30px;
+}
+
+.intoro1 {
+ color: #2dcdb5;
+ text-align: center;
+ font-size: 30px;
+ padding-top: 200px;
+}
+
+.intoro1_b {
+ padding-top:  50px;
+ text-align: center;
+ color: #2dcdb5;
+}
+
+.intoro1_c {
+  padding-top: 70px;
+}
+
+.button50 {
+ text-align: center;
+}
+
+.sign_modal_wrapper1 {
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ background-color: #fff;
+ opacity: .7;
+ z-index: 100;
+ display: none;
+}
+
+.sign_modal1 {
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 550px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  z-index: 3500;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+
+
+.sign_modal_head1 {
+}
+.sign_modal_body1 {
+}
+.sign_modal_up1 {
+  display: none;
+}
+.sign_modal_in1 {
+  display: none;
+}
+
+
+.btn1.outline1 {
+  background: none;
+}
+
+.btn-success1.outline1 {
+  border: 1px solid #2dcdb5; //アウトラインのみのボタンの線の色
+  color: #2dcdb5; //アウトラインのみのボタンのテキストの色
+}
+
+.btn-success1.outline1:hover {
+  background-color: #2dcdb5;
+  color: white;
+  border: 1px solid white; //アウトラインのみのボタンの線の色
+}
+
+.foo {
+  position: fixed;
+  bottom: 0;
+  background-color: #eeeae2; 
+  width: 100%;
+  height: 50px;
+}
+
+
+/* タブレット縦置きサイズ(768px)程度の画面の大きさ以下に適用される設定です */
+@media screen and (max-width:768px) {
+
+.baku, .baku1 {
+  height: 100%;
+  width: 100%;
+}
+
+}
+
+
+/* スマホ縦置きサイズ(768px)程度の画面の大きさ以下に適用される設定です */
+@media screen and (max-width:425px) {
+
+.baku, .baku1 {
+  height: 100%;
+  width: 100%;
+}
+
+
+}
+
+</style>
+
+
+<div class="sign_modal_wrapper1"></div>
+ <div class="sign_modal1">
+ 	<div class="sign_modal_head1"></div>
+ 	 <div class="sign_modal_body1">
+ 	 	<div class="sign_modal_up1">
+ 	 	 <p class="topicnew">ユーザー新規登録</p>
+          <form class="new_user" id="new_user" enctype="multipart/form-data" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="1gR12CcWAkr8qljObvlFrEvGlq/yBbWdFMjeTE/evxYBIyM/Aj/mcFuE+ElmtXuYyiNhxUwNM6hQK2pXNBPQqw==">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+           <div class="field col-xs-12">
+            <div class="field">
+             <label for="user_name">名前</label><br>
+             <input autofocus="autofocus" autocomplete="name" type="text" name="user[name]" id="user_name" class="form-control" placeholder="名前を入力">
+            </div>
+           </div>
+
+           <div class="field col-xs-12">
+            <div class="field">
+             <label for="user_profile">プロフィール</label><br>
+             <input autofocus="autofocus" autocomplete="profile" type="text" name="user[profile]" id="user_profile" class="form-control" placeholder="プロフィール入力">
+            </div>
+           </div>
+
+           <div class="field col-xs-12">
+            <div class="field">
+             <label for="user_email">Eメール</label><br>
+             <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" class="form-control" placeholder="Eメール入力">
+            </div>
+           </div>
+
+           <div class="field col-xs-12">
+            <div class="field">
+             <label for="user_password">パスワード</label>
+             <em>(6文字以上)</em>
+             <br>
+             <input autocomplete="new-password" type="password" name="user[password]" id="user_password" class="form-control" placeholder="パスワード入力">
+            </div>
+           </div>
+
+           <div class="field col-xs-12">
+            <div class="field">
+             <label for="user_password_confirmation">パスワード確認</label><br>
+             <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="user_password_confirmation" class="form-control" placeholder="パスワード再入力">
+            </div>
+           </div>
+
+            <div class="field">
+             <label for="user_genre">好きな話題</label><br>
+             <select name="user[user_genre_id]" id="user_user_genre_id"><option value="1">音楽</option></select>
+            </div>
+
+            <div class="field">
+             <label for="user_user_image">プロフィール写真</label><br>
+             <input value="{}" data-reference="4c05032d57ae4950dcb557dac65a2a44" type="hidden" name="user[user_image]"><input autofocus="autofocus" autocomplete="user_image" data-reference="4c05032d57ae4950dcb557dac65a2a44" include_hidden="false" type="file" name="user[user_image]" id="user_user_image" class="imagechen">
+            </div>
+            <div class="field">
+             <label for="user_user_backimage">プロフィール背景</label><br>
+             <input value="{}" data-reference="1a0d061f29ed786e5e333a3ecba51e78" type="hidden" name="user[user_backimage]"><input autofocus="autofocus" autocomplete="user_backimage" data-reference="1a0d061f29ed786e5e333a3ecba51e78" include_hidden="false" type="file" name="user[user_backimage]" id="user_user_backimage" class="imagechen">
+            </div>
+
+
+            <div class="actions">
+             <input type="submit" name="commit" value="Sign up" data-disable-with="Sign up" class="btn outline btn-success sign_up_btn">
+            </div>
+
+        </form>
+     </div>
+
+     <div class="sign_modal_in1">
+     	<p class="topicnew">ユーザーログイン</p>
+     	<div class="intoro1_c">
+          <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="xyTE1MoLLVR03Lhgs+QTtfYPYsaml5q34eBSv+86A64CI+RU7y9NlerjYrPFPJ7Yq1kIOchBOz/9H/OhySIEdw==">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+         <div class="field col-xs-12">
+          <div class="field">
+          <label for="user_email">Eメール</label><br>
+          <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" class="form-control" placeholder="Eメール入力">
+          </div>
+         </div>
+
+          <div class="field col-xs-12">
+          <label for="user_password">パスワード</label><br>
+          <input autocomplete="current-password" type="password" name="user[password]" id="user_password" class="form-control" placeholder="パスワード入力">
+          </div>
+
+          <div class="field">
+          <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+          <label for="user_remember_me">Remember me</label>
+          </div><br>
+
+           <div class="actions">
+            <input type="submit" name="commit" value="Log in" data-disable-with="Log in" class="btn outline btn-success">
+           </div>
+        </form>
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

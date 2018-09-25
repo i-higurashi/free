@@ -1,0 +1,96 @@
+
+<div class="topichai">
+
+ <div class="container">
+
+　<div class="topict">
+	<div class="topicimage">
+		  	<%= attachment_image_tag @topic.user, :user_image, :fill, 70, 70, format: 'jpeg', class: "chatproimage", fallback: "no-image.jpeg", size:"70x70" %>
+    </div>
+    <div class="topicwaku">
+         <%= link_to @topic.user.name, user_path(@topic.user), class: "textcolor2" %>:
+		 	<%= @topic.created_at.to_formatted_s(:without_second) %>
+		 <h3>
+		 	<%= @topic.title %>(<%= @topic.chats.count %>)
+		 	 <% if @topic.niced_by?(current_user) %>
+		    <%= link_to nices_path(@topic), method: :delete do %>
+		      <span class="glyphicon glyphicon-thumbs-up good"><%= @topic.nices.count %></span>
+		    <% end %>
+		<% else %>
+		    <%= link_to nices_path(@topic) do %>
+		      <span class="glyphicon glyphicon-thumbs-up good2"><%= @topic.nices.count %></span>
+		    <% end %>
+		<% end %>
+			<% if !Favorite.exists?(user_id: current_user.id, topic_id: @topic.id) %>
+			  <%= link_to "", topic_add_path(@topic), method: :topic, class: "glyphicon glyphicon-heart-empty heart1" %>
+			<% else %>
+			  <%= link_to "",topic_add_path(@topic),method: :delete, class: "glyphicon glyphicon-heart heart" %>
+			<% end %>
+			 </h3>
+		 <p><%= attachment_image_tag @topic, :topic_image, :fill, 150, 150, format: 'jpeg' %></p>
+	</div>
+  </div>
+
+
+
+<div class="chatt">
+  <% @chats.each_with_index do |chat , idx| %>
+   <div class="topicimage">
+    <%= attachment_image_tag chat.user, :user_image, :fill, 50, 50, format: 'jpeg', class: "chatproimage" %>
+   </div>
+   <div class="chatwaku">
+	    <span><%= idx + 1 %>：
+	     <%= link_to chat.user.name, user_path(chat.user),class: "textcolor2" %>：
+	     <%= chat.created_at.to_formatted_s(:without_second) %>
+	    </span>
+	   <div class="chatwaku2">
+	     <span class="chatsize"><%= chat.talk %></span>
+
+	   <% if chat.nicetwod_by?(current_user) %>
+	     <p><%= link_to nicetwos_path(chat), method: :delete do %>
+	     <span class="glyphicon glyphicon-thumbs-up good"><%= chat.nicetwos.count %></span>
+	     <% end %>
+	     </p>
+	   <% else %>
+	     <p><%= link_to nicetwos_path(chat) do %>
+	     <span class="glyphicon glyphicon-thumbs-up good2"><%= chat.nicetwos.count %></span>
+	     <% end %>
+	    </p>
+	   <% end %>
+
+	    <p><%= attachment_image_tag chat, :talk_image, :fill, 100, 100, format: 'jpeg' %></p>
+	   </div>
+   </div>
+  <% end %>
+</div>
+   <p>
+    <h4>新規書き込み</h4>
+     <%= form_for @newchat, :url => chat_create_path do |f| %>
+     <%= f.text_area :talk %><%= f.attachment_field :talk_image %>
+     <%= f.hidden_field :topic_id %>
+     <%= f.submit 'chat creat', class: "btn outline btn-success" %>
+     <% end %>
+   </p><br>
+
+ </div>
+
+</div>
+
+
+
+<style>
+
+html {
+  background-color: #E9EAED;
+}
+
+.newtopic {
+  background-color: white;
+}
+
+.chatsize {
+  font-size: 15px;
+}
+
+</style>
+

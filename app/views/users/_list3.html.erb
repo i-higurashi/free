@@ -1,0 +1,15 @@
+
+<div class="sign_modal_wrapper"></div>
+   <div class="sign_modal">
+   	<p class="topicnew">トピック作成</p>
+   	 	<br>
+        <%= form_for(@topic) do |f| %>
+        <div class="col-xs-12">
+         <p>トピック名</p>
+         <%= f.text_field :title, autocomplete: 'off', placeholder: "トピックを入力", class: "form-control" %>
+        </div>
+	    <%= f.attachment_field :topic_image, class: "imagenew" %>
+	    <%= f.submit 'トピックを作る', class: "btn outline btn-success" %>
+        <% end %>
+   </div>
+</div>

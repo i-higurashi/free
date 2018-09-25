@@ -1,0 +1,51 @@
+
+
+
+    <div class="row">
+    	<div class="col-md-12">
+
+
+	      <div class="example">
+	       <p>
+	  	    <%= attachment_image_tag @user, :user_backimage, format: 'jpeg', class: "probackimage", fallback: "haikeino-image.jpeg", size:"230x230" %>
+	 	   </p>
+　　　　     <div class="prolist">
+     	      <ul class="list">
+     		   <li class="list1">
+     		   	<p>フォロー</p>
+     		   	<span class="list2" ><%= link_to @user.followed_users.count, follow_p_path(@user), class: "list4" %></span>
+     		   </li>
+     		   <li class="list1">
+     		   	<p>フォロワー</p>
+     		   	<span class="list2"><%= link_to @user.followers.count, followed_p_path(@user), class: "list4" %></span>
+     		   	</li>
+     		   <li class="list1">
+     		   	<p>トピックのいいね</p>
+     		    <span class="list2"><%= @mytopicnice.count + @mychatnicetwo.count %></span>
+     		   </li>
+     		   <li class="list1">
+     		   	<p>チャットのいいね</p>
+     		   	<span class="list2"><%= @mychatnicetwo.count %></span>
+     		   	</li>
+                <div class="list3">
+                 <% unless @user == current_user %>
+				  <% if current_user.following?(@user) %>
+					<%= link_to "フォロー中", follow_path(@user.id), class: "btn outline btn-success btn-sm" %>
+				  <% else %>
+					<%= link_to "フォローする", follow_path(@user.id), class: "btn outline btn-success btn-sm" %>
+				  <% end %>
+                 <% end %>
+				</div>
+     	      </ul>
+            </div>
+            <div class="container">
+	          <%= attachment_image_tag @user, :user_image, :fill, 230, 230, format: 'jpeg', class: "proimage", fallback: "no-image.jpeg", size:"230x230" %>
+	        </div>
+
+	      </div>
+
+
+
+
+	    </div>
+	</div>

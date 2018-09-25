@@ -1,3 +1,331 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.textcolor1 {
+ color: #2dcdb5;
+}
+
+
+
+.textcolor {
+	color: #000000;
+}
+
+.textcolor:hover {
+	color: #787c7b;
+}
+
+.navbarhe {
+  margin-bottom: -1px;
+}
+
+
+.example {
+  position: relative;
+  }
+
+.probackimage {
+  margin-top: -19px;
+  width: 100%;
+  height: 400px;
+  margin-bottom: -28px;
+}
+
+.proimage {
+  border-radius: 50%;
+  border: 9px solid #E9EAED;
+  position: absolute;
+  top: 65%;
+  left: 15%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;/*余計な隙間を除く*/
+  padding:0;/*余計な隙間を除く*/
+  }
+
+.prolist {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  color: #000000;
+  border-bottom: solid 0.2px #C5C6C8;
+}
+
+.list {
+  margin-left: 300px;
+  margin-bottom: -1px;
+  list-style: none;
+}
+
+.list1 {
+  background-color: white;
+  height: 100%;
+  float: left;
+  text-align: center;
+  margin: 0 5px;
+  color: #66757f;
+  line-height: 20px;
+}
+
+.list2 {
+  font-size: 25px;
+  line-height: 20px;
+}
+
+
+.list3 {
+  line-height: 55px;
+  padding-left: 600px;
+}
+
+.list4 {
+  color: #66757f;
+}
+
+.list4:hover {
+  color: #2dcdb5;
+  border-bottom: solid 1px #2dcdb5;
+}
+
+.backc {
+	background-color: #E9EAED;
+	font-family: sans-serif;
+}
+
+
+.midashi1 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 2px;
+  text-align: center;
+  background-color: #2dcdb5;
+  color: white;
+  font-size: 15px;
+  height: 10px;
+}
+
+.sukima {
+	background-color: white;
+}
+
+
+.anatatwaku {
+  color: #FFF;
+  text-decoration: none;
+  background-color: white; /*ボタン色*/
+  border-radius: 5px; /*角丸*/
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+
+.anatawaku:hover{
+  background-color: #f4f4f4; /*ボタン色*/
+}
+
+.anatawaku2 {
+  height: 80px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.anatawaku2:hover{
+  background-color: #E9EAED; /*ボタン色*/
+
+}
+
+.anatawaku3 {
+  float: left;
+}
+
+.anatawaku4 {
+  padding-left: 70px;
+}
+
+.textcolor {
+  color: #000000;
+}
+
+.textcolor2 {
+  color: #000000;
+}
+
+.textcolor2:hover {
+  color: #2dcdb5;
+}
+
+.topicsize {
+  font-size: 18px;
+}
+
+.heart1 {
+  color: #66757f;
+}
+
+.heart1:hover {
+  color: red;
+}
+
+.heart {
+  color: red;
+}
+
+.saku {
+  color: #66757f;
+}
+
+.saku:hover {
+  color: blue;
+}
+
+.btn {
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn.outline {
+  background: none;
+}
+
+.btn-success.outline {
+  border: 1px solid #2dcdb5; //アウトラインのみのボタンの線の色
+  color: #2dcdb5; //アウトラインのみのボタンのテキストの色
+}
+
+.btn-success.outline:hover {
+  background-color: #2dcdb5;
+  color: white;
+  border: 2px solid #2dcdb5; //アウトラインのみのボタンの線の色
+}
+
+
+.button30 {
+  float: left;
+  cursor: pointer;
+}
+
+.button30:nth-child(1) {
+}
+
+.button40 {
+  float: left;
+  cursor: pointer;
+}
+
+.button40:nth-child(1) {
+}
+
+.clear {
+  clear: left;
+}
+
+.sign_modal_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: .7;
+  z-index: 100;
+  display: none;
+}
+
+.sign_modal {
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 250px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  z-index: 3500;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.sign_modal_head {
+}
+
+.sign_modal_body {
+}
+
+.sign_modal_up {
+  display: none;
+}
+
+
+.modal_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: .7;
+  z-index: 100;
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 550px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  z-index: 3500;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.modal_head {
+}
+
+.modal_body {
+}
+
+.modal_up {
+  display: none;
+}
+
+.topicnew {
+  background-color: #2dcdb5;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+}
+
+
+
+.imagenew {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 15px;
+}
+
+.imagechen {
+  padding-left: 100px;
+}
+
+
+

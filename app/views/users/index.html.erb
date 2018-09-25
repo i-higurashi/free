@@ -1,0 +1,135 @@
+
+<div class="col-md-2 text-center">
+
+  <p><%= attachment_image_tag @user, :user_image, :fill, 120, 120, format: 'jpeg', class: "image22", fallback: "no-image.jpeg", size:"120x120" %></p>
+  <h4>@<%= @user.name %></h4>
+  <h4>プロフィール</h4>
+   <p><%= @user.profile %></p>
+
+
+</div>
+
+
+
+<div class="col-md-7">
+   <div class="bak">
+	<p class="midashi1">ユーザーを探す</p>
+	 <div class="col-md-12">
+	   <div class="navbar-form">
+        <%= form_tag  users_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], placeholder: "ユーザーを検索", class: "form-control"  %>
+        <%= button_tag :name => nil do %>
+        <span class="form-control btn-default glyphicon glyphicon-search"></span>
+        <% end %>
+        <% end %>
+       </div>
+     </div>
+
+
+
+<div class="boxContainer">
+	<% @users.each do |user| %>
+	<div class="box">
+		<div class="col-md-12 text-center">
+		<%= attachment_image_tag user, :user_image, :fill, 95, 95, format: 'jpeg', class: "image22", fallback: "no-image.jpeg", size:"95x95" %>
+		<p>@<%= link_to user.name, user_path(user), class: "textcolor2" %></p>
+     	<% if current_user.following?(user) %>
+	     <%= link_to "フォロー中", follow_path(user), class: "btn outline btn-success btn-sm" %>
+        <% else %>
+	     <%= link_to "フォローする", follow_path(user), class: "btn outline btn-success btn-sm" %>
+        <% end %>
+	    </div>
+	</div>
+	<% end %>
+</div>
+
+
+   </div>
+</div>
+
+<div class="col-md-3">
+ <div class="top1_b">
+  <p class="midashi1">最近始めたユーザー</p>
+
+
+   <% @user_ranking.each do |ranking| %>
+    <div class="top1_image_a">
+     <%= attachment_image_tag ranking, :user_image, :fill, 50, 50, format: 'jpeg', class: "top1_image", fallback: "no-image.jpeg", size:"50x50" %>
+      <strong>@<%= link_to ranking.name, user_path(ranking), class: "textcolor2" %></strong>
+     	<% if current_user.following?(ranking) %>
+	     <%= link_to "フォロー中", follow_path(ranking), class: "btn outline btn-success btn-sm test" %>
+        <% else %>
+	     <%= link_to "フォローする", follow_path(ranking), class: "btn outline btn-success btn-sm test" %>
+        <% end %>
+    </div>
+   <% end %>
+ </div>
+</div>
+
+<%= render 'users/list3' %>
+
+
+<style>
+
+html {
+  background-color: #E9EAED;
+}
+
+.bak {
+  background-color: white;
+}
+
+.image22 {
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.top1_image_a {
+  padding-left: 10px;
+  height: 70px;
+}
+
+.top1_image {
+  border-radius: 50%;
+  border: 2px solid #E9EAED;
+}
+
+.test {
+  float:right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.top1_b {
+  background-color: white;
+  clear: both;
+}
+
+.box {
+  float: left;
+  height: 180px;
+  width: 130px;
+}
+
+.boxContainer {
+
+}
+
+/* clearfix */
+.boxContainer:before,
+.boxContainer:after {
+  content: "";
+  display: table;
+}
+
+.boxContainer:after {
+  clear: both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.boxContainer {
+  zoom: 1;
+}
+
+
+</style>

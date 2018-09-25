@@ -1,0 +1,126 @@
+
+
+
+<div class="fontf">
+
+
+
+  <div class="main-visual1">
+  	  <p class="name">
+  	  	Free
+  	  </p>
+  	  <p class="syouko">
+  	  	Freeは、自由な話題で自由に語り合う掲示板サービスです。
+  	  </p>
+
+	<div class="container grop">
+		<div class="stren">
+			<i class="glyphicon glyphicon glyphicon-comment gropicon"></i>
+			<p>chat</p>
+			<p class="groptext">自由なテーマで語り合うことができます。様々
+			な価値観を持ったユーザー達と自由に語り合いましょう</p>
+		</div>
+		<div class="stren">
+			<i class="glyphicon glyphicon glyphicon-user gropicon"></i>
+			<p>follow</p>
+			<p class="groptext">気に入ったユーザーをフォロー、気に入ったトピックをお気に入りすることが出来ます。自由に繋がりましょう。</p>
+		</div>
+		<div class="stren">
+			<i class="glyphicon glyphicon glyphicon-heart gropicon"></i>
+			<p>nice</p>
+			<p class="groptext">ナイスな投稿にはいいねをする事が出来ます。お題に対しても投稿に対してもグットなものにはいいねしましょう。</p>
+		</div>
+	</div>
+
+  </div>
+
+
+
+<div class="main-visual2">
+
+	 <div class="daiko">
+		扱いやすくするために様々な仕組みを取り入れました
+	 </div>
+
+ <div class="grop2">
+	<div class="stren2">
+		<div class="iconcaver">
+		 <i class="glyphicon glyphicon glyphicon-pencil"></i>
+    	</div>
+		<p class="stren2text">
+		　トピックの検索
+		</p>
+    </div>
+	<div class="stren2">
+		<div class="iconcaver">
+		<i class="glyphicon glyphicon glyphicon-search"></i>
+    	</div>
+		<p class="stren2text">ユーザー検索</p>
+	</div>
+	<div class="stren2">
+		<div class="iconcaver">
+		<i class="glyphicon glyphicon glyphicon-thumbs-up"></i>
+    	</div>
+		<p class="stren2text">いいねボタン</p>
+	</div>
+	<div class="stren2">
+		<div class="iconcaver">
+		<i class="glyphicon glyphicon glyphicon-heart"></i>
+    	</div>
+		<p class="stren2text">お気に入り機能</p>
+	</div>
+	<div class="stren2">
+		<div class="iconcaver">
+		<i class="glyphicon glyphicon glyphicon-user"></i>
+    	</div>
+		<p class="stren2text">ユーザーフォロー</p>
+	</div>
+	<div class="stren2">
+		<div class="iconcaver">
+		<i class="glyphicon glyphicon glyphicon-comment"></i>
+    	</div>
+		<p class="stren2text">昔ながらの掲示板</p>
+    </div>
+  </div>
+</div>
+
+
+  <div class="main-visual3">
+  	<p class="alltopicchat">ここまでのFree</p>
+  	<div class="alltopic">
+     <%= @topics.count + @chats.count %>
+  	 <p class="alltopic2">件投稿されています</p>
+    </div>
+
+    <div class="allchat">
+     <%= @nices.count + @nicetwos.count %>
+  	 <p class="allchat2">件いいねされています</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="footer">
+
+  	<div class="footer1">
+		<div class="footer2">
+			<a class="footertext">© 2011-2018 Increments Inc.</a>
+			<a class="footertext">利用規約</a>
+			<a class="footertext">プライバシー</a>
+			<a class="footertext">ヘルプ</a>
+			<a class="footertext">お問い合わせ</a>
+			<a class="fhome"><%= link_to "freeとは", home_path, class: "footertext" %></a>
+		</div>
+
+	</div>
+
+
+
+  </div>
+
+
+</div>
+
+
+

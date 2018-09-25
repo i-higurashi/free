@@ -1,0 +1,91 @@
+
+
+<%= render 'users/list' %>
+
+<div class="row backc">
+
+ <div class="container">
+
+     <%= render 'users/list2' %>
+        <div class="col-md-7">
+	      <div class="sukima">
+	        <h4 class="midashi1">
+			 あなたのお気に入り
+		    </h4>
+　　　　　　　<% if @user == current_user %>
+	         <div class="anatatwaku">
+			   <% @favorite.each do |favorite| %>
+	        	 <div class="anatawaku2">
+	        		 <div class="anatawaku3">
+	        	      <%= attachment_image_tag favorite.topic.user, :user_image, :fill, 50, 50, format: 'jpeg', class: "chatproimage" %>
+	        	     </div>
+	        	     <div class="anatawaku4">
+	        	     	<div class="textcolor">
+		        	      <%= link_to favorite.topic.user.name, user_path(favorite.topic.user), class: "textcolor2" %>：<%= favorite.topic.created_at.to_formatted_s(:without_second) %>
+		        	    </div>
+		        	      <br>
+						  <p class="topicsize textcolor">
+						 <%= link_to favorite.topic.title, topic_path(favorite.topic.id), class: "textcolor2" %>(<%= favorite.topic.chats.count %>)
+		 			     </p>
+		 			 </div>
+		 		  </div>
+              <% end %>
+             </div>
+            <% end %>
+  </div>
+
+</div>
+
+<div class="col-md-3">
+ <div class="top3_a">
+  <h4 class="midashi1">人気のトピック</h4>
+  	<% @chatsranking.each do |rankingtopic| %>
+	 <p class="top3_title">
+      <span>@<%= link_to rankingtopic.user.name, user_path(rankingtopic.user), class: "textcolor2" %></span>
+      <br>
+      <strong class="top3_body">
+       <%= link_to rankingtopic.title, topic_path(rankingtopic), class: "textcolor3" %>
+       (<%= rankingtopic.chats.count %>)
+      <% if !Favorite.exists?(user_id: current_user.id, topic_id: rankingtopic.id) %>
+       <%= link_to "", topic_add_path(rankingtopic), method: :topic, class: "glyphicon glyphicon-heart-empty heart1" %>
+      <% else %>
+       <%= link_to "",topic_add_path(rankingtopic),method: :delete, class: "glyphicon glyphicon-heart heart" %>
+      <% end %>
+      </strong>
+     </p>
+	  <% end %>
+ </div>
+</div>
+
+<%= render 'users/list3' %>
+
+<%= render 'users/list4' %>
+
+<style>
+
+.top3_a {
+  background-color: white;
+}
+
+.top3_title {
+  padding-left: 10px;
+}
+
+.textcolor3 {
+  color: #2dcdb5;;
+}
+
+.top3_body {
+  font-size: 15px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+

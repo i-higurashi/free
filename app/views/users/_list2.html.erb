@@ -1,0 +1,14 @@
+
+    <div class="col-md-2">
+
+			<h3>@<%= @user.name %></h3>
+			<h4>プロフィール</h4>
+			<p><%= @user.profile %></p>
+
+			<p>好きな話題：<%= @genre.name %></p>
+		  <% if @user == current_user %>
+			<p class="glyphicon glyphicon-wrench button40">ユーザー編集</p>
+		  <% end %>
+
+
+    </div>

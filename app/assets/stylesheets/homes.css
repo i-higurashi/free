@@ -1,0 +1,649 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.fontf {
+	font-family: sans-serif;
+}
+
+.header {
+  width: 100%; /* 横幅いっぱい */
+  height: 60px; /* 高さ120px */
+  background-color: white; /* 背景赤色 */
+}
+
+.test1 {
+   color: #2dcdb5;               /* 文字を白色に */
+}
+
+.test3 {
+   text-align: right; /* 文章を右寄せする */
+   margin-right: 30px;
+   color: #2dcdb5;
+}
+
+.test2 {
+   text-align: left;
+   float: left;
+   line-height: 60px;
+   font-size: 30px;
+   margin-left: 30px;
+   color: #2dcdb5;
+}
+
+.test2:hover {
+  text-decoration: none;
+}
+
+.fhome {
+  display: inline;
+  line-height: 60px;
+}
+
+.btnbtn {
+	color: #2dcdb5;
+}
+
+.fhome.cp_btn {
+  text-decoration:none;
+  padding: 0.8em;
+  text-align: center;
+  border-radius: 4px;
+  background: white;
+  overflow: hidden;
+  padding-left: 30px;
+}
+
+.fhome.cp_btn span {
+  display:inline-block;
+  transition: .5s
+}
+.fhome.cp_btn:hover span {
+  transform: rotateX(360deg);
+}
+
+.square_btn2 {
+}
+
+
+.main-visual1 {
+  width: 100%; /* 横幅 */
+  height: 700px; /* 高さ */
+  background-color: #2dcdb5; /* 背景色 */
+}
+
+.name {
+	color: white;
+	text-align: center;
+	font-size: 230px;
+	height: 260px;
+	padding-top: 50px;
+}
+
+.syouko {
+  color: white;
+	text-align: center;
+	font-size: 20px;
+	padding-top: 100px;
+}
+
+.grop {
+  color: white;
+	padding-top: 50px;
+}
+
+.gropicon {
+	font-size: 50px;
+}
+
+.groptext {
+	font-size: 16px;
+}
+
+.stren {
+    float: left;
+    width: 360px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.main-visual2 {
+  width: 100%; /* 横幅 */
+  height: 400px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+  color: #66595c;
+}
+
+.daiko {
+  font-size: 25px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.grop2 {
+	padding-top: 60px;
+}
+
+
+.stren2 {
+    float: left;
+    width: 230px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+}
+
+.iconcaver {
+	background-color: #f7f6f2;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin: auto;
+    line-height: 85px;
+    font-size: 30px;
+}
+
+
+.main-visual3 {
+  width: 100%; /* 横幅 */
+  height: 550px; /* 高さ */
+}
+
+.footer {
+  width: 100%; /* 横幅 */
+  height: 120px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+}
+
+.footertext {
+  color: #66595c;
+}
+
+.footer1 {
+	padding-top: 50px;
+}
+
+
+.footer3 {
+   text-align: right; /* 文章を右寄せする */
+   margin-right: 30px;
+}
+
+.footer2 {
+   text-align: left;  /* 文章を左寄せする(※) */
+   float: left;     /* 左端に寄せて、後続を右側へ回り込ませる */
+   line-height: 50px;
+   margin-left: 30px;
+}
+
+.alltopicchat {
+  color: #66595c;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 70px;
+}
+
+.alltopic {
+  text-align: center;
+  color: #66595c;
+  font-size: 100px;
+}
+
+.allchat {
+  text-align: center;
+  color: #66595c;
+  font-size: 100px;
+}
+
+.alltopic2 {
+  font-size: 20px;
+}
+
+.allchat2 {
+  font-size: 20px;
+}
+
+/* タブレット横置き(1024px)程度の大きさ以下に適用される設定です */
+@media screen and (max-width:1024px) {
+
+.main-visual1 {
+  width: 100%;
+  height: 600px;
+  }
+
+.name {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  height:   100px;
+  padding-top: 20px;
+}
+
+.syouko {
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  padding-top: 50px;
+}
+
+.grop {
+  color: white;
+  padding-top: 20px;
+}
+
+.stren {
+  float: none;
+  width: 100%;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.gropicon {
+  font-size: 40px;
+}
+
+.groptext {
+  font-size: 10px;
+}
+
+.daiko {
+  font-size: 15px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.grop2 {
+  padding-top: 30px;
+}
+
+.stren2 {
+  float: none;
+  width: 100%;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+}
+
+.iconcaver {
+  background-color: #f7f6f2;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin: auto;
+  line-height: 85px;
+  font-size: 35px;
+}
+
+.stren2text {
+  font-size: 13px;
+}
+
+
+.main-visual2 {
+  width: 100%; /* 横幅 */
+  height: 750px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+  color: #66595c;
+}
+
+.footertext {
+  font-size: 10px;
+  color: #66595c;
+}
+
+.footer {
+  width: 100%; /* 横幅 */
+  height: 80px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+}
+
+.footer1 {
+  padding-top: 20px;
+}
+
+
+.footer3 {
+   margin-right: 10px;
+}
+
+.footer2 {  /* 文章を左寄せする(※) */
+   float: left;     /* 左端に寄せて、後続を右側へ回り込ませる */
+   line-height: 5px;
+   margin-left: 5px;
+}
+
+.fhome {
+  display: inline;
+  line-height: 30px;
+}
+
+.alltopicchat {
+  color: #66595c;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 100px;
+}
+
+.alltopic {
+  text-align: center;
+  color: #66595c;
+  font-size: 80px;
+}
+
+.allchat {
+  text-align: center;
+  color: #66595c;
+  font-size: 80px;
+}
+
+.alltopic2 {
+  font-size: 15px;
+}
+
+.allchat2 {
+  font-size: 15px;
+}
+
+}
+
+/* タブレット縦置きサイズ(768px)程度の画面の大きさ以下に適用される設定です */
+@media screen and (max-width:768px) {
+
+.main-visual1 {
+  width: 100%;
+  height: 600px;
+  }
+
+.name {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  height:   100px;
+  padding-top: 20px;
+}
+
+.syouko {
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  padding-top: 50px;
+}
+
+.grop {
+  color: white;
+  padding-top: 20px;
+}
+
+.stren {
+  float: none;
+  width: 100%;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.gropicon {
+  font-size: 40px;
+}
+
+.groptext {
+  font-size: 10px;
+}
+
+.daiko {
+  font-size: 15px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.grop2 {
+  padding-top: 30px;
+}
+
+.stren2 {
+  float: none;
+  width: 100%;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+}
+
+.iconcaver {
+  background-color: #f7f6f2;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin: auto;
+  line-height: 85px;
+  font-size: 35px;
+}
+
+.stren2text {
+  font-size: 13px;
+}
+
+
+.main-visual2 {
+  width: 100%; /* 横幅 */
+  height: 750px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+  color: #66595c;
+}
+
+.footertext {
+  font-size: 10px;
+  color: #66595c;
+}
+
+.footer {
+  width: 100%; /* 横幅 */
+  height: 80px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+}
+
+.footer1 {
+  padding-top: 20px;
+}
+
+
+.footer3 {
+   margin-right: 10px;
+}
+
+.footer2 {  /* 文章を左寄せする(※) */
+   float: left;     /* 左端に寄せて、後続を右側へ回り込ませる */
+   line-height: 5px;
+   margin-left: 5px;
+}
+
+.fhome {
+  display: inline;
+  line-height: 30px;
+}
+
+.alltopicchat {
+  color: #66595c;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 100px;
+}
+
+.alltopic {
+  text-align: center;
+  color: #66595c;
+  font-size: 80px;
+}
+
+.allchat {
+  text-align: center;
+  color: #66595c;
+  font-size: 80px;
+}
+
+.alltopic2 {
+  font-size: 15px;
+}
+
+.allchat2 {
+  font-size: 15px;
+}
+
+
+}
+
+
+/* スマートフォンサイズ(425px)程度の画面の大きさ以下に適用される設定です */
+@media screen and (max-width:425px) {
+.main-visual1 {
+  width: 100%;
+  height: 600px;
+  }
+
+.name {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  height:   100px;
+  padding-top: 20px;
+}
+
+.syouko {
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  padding-top: 50px;
+}
+
+.grop {
+  color: white;
+  padding-top: 20px;
+}
+
+.stren {
+  float: none;
+  width: 100%;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.gropicon {
+  font-size: 40px;
+}
+
+.groptext {
+  font-size: 10px;
+}
+
+.daiko {
+  font-size: 15px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.grop2 {
+  padding-top: 30px;
+}
+
+.stren2 {
+  float: none;
+  width: 100%;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+}
+
+.iconcaver {
+  background-color: #f7f6f2;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin: auto;
+  line-height: 85px;
+  font-size: 35px;
+}
+
+.stren2text {
+  font-size: 13px;
+}
+
+
+.main-visual2 {
+  width: 100%; /* 横幅 */
+  height: 750px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+  color: #66595c;
+}
+
+.footertext {
+  font-size: 10px;
+  color: #66595c;
+}
+
+.footer {
+  width: 100%; /* 横幅 */
+  height: 80px; /* 高さ */
+  background-color: #eeeae2; /* 背景色 */
+}
+
+.footer1 {
+  padding-top: 20px;
+}
+
+
+.footer3 {
+   margin-right: 10px;
+}
+
+.footer2 {  /* 文章を左寄せする(※) */
+   float: left;     /* 左端に寄せて、後続を右側へ回り込ませる */
+   line-height: 5px;
+   margin-left: 5px;
+}
+
+.fhome {
+  display: inline;
+  line-height: 30px;
+}
+
+.alltopicchat {
+  color: #66595c;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 100px;
+}
+
+.alltopic {
+  text-align: center;
+  color: #66595c;
+  font-size: 80px;
+}
+
+.allchat {
+  text-align: center;
+  color: #66595c;
+  font-size: 80px;
+}
+
+.alltopic2 {
+  font-size: 15px;
+}
+
+.allchat2 {
+  font-size: 15px;
+}
+
+
+}
+
+
+

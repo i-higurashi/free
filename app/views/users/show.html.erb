@@ -1,10 +1,132 @@
-<p>ユーザーの詳細ページ</p>
 
-<p><%= current_user.name %></p>
-<p><%= current_user.profile %></p>
-<p><%= attachment_image_tag current_user, :user_image, :fill, 150, 150, format: 'jpeg' %></p>
+<head>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="free/app/assets/stylesheets/users.scss">
+</head>
 
-<p><%= attachment_image_tag current_user, :user_backimage, :fill, 150, 150, format: 'jpeg' %></p>
+<%= render 'users/list' %>
 
-<p><%= link_to 'プロフィール編集', edit_user_path %></p>
-<p><%= link_to 'logout', destroy_user_session_path, method: :delete %></p>
+
+<div class="row backc">
+
+ <div class="container">
+
+<%= render 'users/list2' %>
+
+    <div class="col-md-7">
+	  <div class="sukima">
+		<h4 class="midashi1">
+			トピック
+		</h4>
+
+<!-- ここからあなたの投稿を編集 -->
+	         <div class="anatatwaku">
+			   <% @topics.each do |topic| %>
+	        	 <div class="anatawaku2">
+	        		 <div class="anatawaku3">
+	        	      <%= attachment_image_tag topic.user, :user_image, :fill, 50, 50, format: 'jpeg', class: "chatproimage", fallback: "no-image.jpeg", size:"50x50" %>
+	        	     </div>
+	        	     <div class="anatawaku4">
+	        	     	<div class="textcolor jikan">
+		                @<%= link_to @user.name, user_path(@user), class: "textcolor2" %>：<%= topic.created_at.to_formatted_s(:without_second) %>
+		                </div>
+		        	      <br>
+						  <p class="topicsize textcolor">
+						   <%= link_to topic.title, topic_path(topic.id), class: "textcolor2" %>(<%= topic.chats.count %>)
+						  <% if !Favorite.exists?(user_id:current_user.id, topic_id: topic.id) %>
+					       <%= link_to "", topic_add_path(topic), method: :topic, class: "glyphicon glyphicon-heart-empty heart1" %>
+					      <% else %>
+					       <%= link_to "",topic_add_path(topic),method: :delete, class: "glyphicon glyphicon-heart heart" %>
+					      <% end %>
+
+					     <% if topic.user == current_user %>
+					      <%= link_to "", topic_path(topic.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "glyphicon glyphicon-trash saku" %>
+					     <% end %>
+					     </p>
+
+				    </div>
+			    </div>
+		     <% end %>
+		     <p class="btn itiranbtn"><%= link_to "投稿一覧へ", topicuser_path(@user) %></p>
+           </div>
+<!-- ここまで -->
+
+
+
+
+	<!-- 後でユーザーのお気に入り最新5件表示されるようになり、尚且つ一覧ページに推移できるリンクを作る -->
+
+　　　　　　　<% if @user == current_user %>
+	         <div class="anatatwaku">
+	            <p class="midashi1">
+			     お気に入り
+		        </p>
+			   <% @favorites.each do |favorite| %>
+	        	 <div class="anatawaku2">
+	        		 <div class="anatawaku3">
+	        	      <%= attachment_image_tag favorite.topic.user, :user_image, :fill, 50, 50, format: 'jpeg', class: "chatproimage", fallback: "no-image.jpeg", size:"50x50" %>
+	        	     </div>
+	        	     <div class="anatawaku4">
+	        	     	<div class="textcolor jikan">
+		        	      @<%= link_to favorite.topic.user.name, user_path(favorite.topic.user), class: "textcolor2" %>：<%= favorite.topic.created_at.to_formatted_s(:without_second) %>
+		        	    </div>
+		        	      <br>
+						  <p class="topicsize textcolor">
+						 <%= link_to favorite.topic.title, topic_path(favorite.topic.id), class: "textcolor2" %>(<%= favorite.topic.chats.count %>)
+		 			     </p>
+		 			 </div>
+		 		  </div>
+               <% end %>
+               </div>
+               <p class="btn itiranbtn"><%= link_to "お気に入り一覧", favorites_path %></p>
+		     <% end %>
+         </div>
+      </div>
+
+
+  <div class="col-md-3">
+	<div class="sukima">
+	 <h4 class="midashi1">人気のトピック</h4>
+  	<% @chatsranking.each do |rankingtopic| %>
+	  <p class="top3_title">
+      <span>@<%= link_to rankingtopic.user.name, user_path(rankingtopic.user), class: "textcolor2" %></span>
+      <br>
+      <strong class="top3_body">
+       <%= link_to rankingtopic.title, topic_path(rankingtopic), class: "textcolor3" %>
+       (<%= rankingtopic.chats.count %>)
+      <% if !Favorite.exists?(user_id: current_user.id, topic_id: rankingtopic.id) %>
+       <%= link_to "", topic_add_path(rankingtopic), method: :topic, class: "glyphicon glyphicon-heart-empty heart1" %>
+      <% else %>
+       <%= link_to "",topic_add_path(rankingtopic),method: :delete, class: "glyphicon glyphicon-heart heart" %>
+      <% end %>
+      </strong>
+    </p>
+	  <% end %>
+	</div>
+  </div>
+
+<%= render 'users/list3' %>
+
+<%= render 'users/list4' %>
+
+<style>
+
+.top3_title {
+  padding-left: 10px;
+}
+
+.textcolor3 {
+  color: #2dcdb5;;
+}
+
+.top3_body {
+  font-size: 15px;
+}
+
+.jikan {
+  color: #66757f;
+}
+
+
+</style>
+

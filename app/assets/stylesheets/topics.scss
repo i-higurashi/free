@@ -1,0 +1,82 @@
+// Place all the styles related to the topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.topichai {
+  background-color: #E9EAED;
+  background-size: 100%;
+  margin-top: -19px;
+
+}
+
+.topict {
+  height: 100%;
+}
+
+.topicimage {
+  float: left;
+}
+
+.topicwaku {
+  padding-left: 80px;
+}
+
+
+.chatt {
+  clear: both;
+  padding-top: 10px;
+  height: 100%;
+}
+
+.chatwaku {
+  padding-left: 60px;
+}
+
+.good {
+  color: #2dcdb5;
+}
+
+.good2:hover {
+	color: #2dcdb5;
+}
+
+
+.hed {
+  background-color: #2dcdb5;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+}
+
+.center {
+  margin:0 auto;
+  float: left;
+}
+
+.btn.outline {
+    background: none;
+}
+
+.btn-success.outline {
+    border: 1px solid #2dcdb5; //アウトラインのみのボタンの線の色
+    color: #2dcdb5; //アウトラインのみのボタンのテキストの色
+}
+
+.btn-success.outline:hover {
+  background-color: #2dcdb5;
+  color: white;
+  border: 2px solid #2dcdb5; //アウトラインのみのボタンの線の色
+}
+
+
+
+
+
+
+
+
+
+
+
